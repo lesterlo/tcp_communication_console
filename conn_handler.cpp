@@ -14,6 +14,6 @@ void Conn_Handler::run_handle()
 {
     while(true)
     {
-        std::cout << "hello thread" << std::endl;
+        std::cout << "hello thread: "<< _client_sd << std::endl;
     }
 }

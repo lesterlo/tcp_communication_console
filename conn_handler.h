@@ -14,9 +14,6 @@
 #include <errno.h>
 #include <dirent.h>
 
-void pthread_opening_helper(void*);
-void pthread_closeing_helper(void*);
-
 class Conn_Handler
 {
 public:
