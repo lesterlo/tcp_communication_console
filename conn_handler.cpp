@@ -18,8 +18,10 @@ void Conn_Handler::run_handle()
 		if((recv_length =recv(_client_sd, data_buffer, BUFSIZE, 0)) == -1)
         { //Read in a request
 			std::cout << "[Error]: " << "Unable to read request" << std::endl;
+
+            break;
 		} 
-        else
+        else if(recv_length>0)
         {
             std::cout << "Received: ";
             for(int i=0; i< recv_length; i++)
