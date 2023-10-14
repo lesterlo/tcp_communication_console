@@ -19,7 +19,7 @@
 #include "conn_handler.h"
 // #define DEBUG_MODE
 
-#define BUFSIZE 2048
+
 #define MAX_CONNECTION 10
 
 
@@ -40,9 +40,8 @@ private:
 	struct sockaddr_in client_addr;     /* remote address */
 	socklen_t client_addrlen;            /* length of addresses */
 	int recvlen;                    /* # bytes received */
-	int _server_sd;	//Server Socket descriptor
-	int _client_sd;	//Client Socket descriptor             
-	unsigned char buf[BUFSIZE];     /* receive buffer */
+	int _server_sd;	//Server Socket descriptor        
+
 
 	
 	//Control

@@ -14,6 +14,8 @@
 #include <errno.h>
 #include <dirent.h>
 
+#define BUFSIZE 2048
+
 class Conn_Handler
 {
 public:
@@ -23,4 +25,6 @@ public:
 private:
     int _client_sd;
     struct sockaddr_in _client_addr;
+    unsigned char data_buffer[BUFSIZE];     /* receive buffer */
+ 
 };
