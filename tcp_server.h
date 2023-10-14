@@ -27,11 +27,9 @@ class TCP_Server{
 public:
 	TCP_Server(int);
 	~TCP_Server();
-	static void conn_handle(int, struct sockaddr_in);
+	void conn_handle(int, struct sockaddr_in);
 	void init_server();
 	void run_server();
-
-	
 
 private:
 	int input_port_;
@@ -39,15 +37,5 @@ private:
 	struct sockaddr_in server_addr;      /* our address */
 	struct sockaddr_in client_addr;     /* remote address */
 	socklen_t client_addrlen;            /* length of addresses */
-	int recvlen;                    /* # bytes received */
 	int _server_sd;	//Server Socket descriptor        
-
-
-	
-	//Control
-	bool running_flag;
-
-	
-
-
 };

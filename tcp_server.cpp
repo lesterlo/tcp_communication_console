@@ -71,7 +71,7 @@ void TCP_Server::run_server()
 			exit(0);
 		}
         else 
-        { //Connection accept
+        { //Connection accepted
 			std::cout << "[Info]: " << "Connection Accepted" << std::endl;
 
             //Create thread to handle the client
