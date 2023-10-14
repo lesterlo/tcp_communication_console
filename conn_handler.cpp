@@ -25,6 +25,10 @@ void Conn_Handler::run_handle()
             for(int i=0; i< recv_length; i++)
                 std::cout << data_buffer[i];
             std::cout << std::endl;
+
+            //Echo back
+            int send_length = 0;
+            send_length = send(_client_sd, data_buffer, recv_length, 0);
         }
     }
 
