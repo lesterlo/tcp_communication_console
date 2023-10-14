@@ -23,14 +23,17 @@ void Conn_Handler::run_handle()
 		} 
         else if(recv_length>0)
         {
-            std::cout << "Received: ";
+            std::cout << "[Cid:"<< _client_sd << "] "<< "Received: ";
             for(int i=0; i< recv_length; i++)
                 std::cout << data_buffer[i];
             std::cout << std::endl;
 
+            std::stringstream echo_msg;
+            echo_msg << std::string(data_buffer, data_buffer+recv_length) << "<ACK:>";
+
             //Echo back
             int send_length = 0;
-            send_length = send(_client_sd, data_buffer, recv_length, 0);
+            send_length = send(_client_sd, echo_msg.str().c_str(), echo_msg.str().length(), 0);
         }
     }
 
