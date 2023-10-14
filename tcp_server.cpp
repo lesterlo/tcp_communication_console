@@ -10,7 +10,11 @@ TCP_Server::~TCP_Server()
     close(_server_sd);
 }
 
-void client_closeing_helper(void *);
+void client_closeing_helper(void* client_conn){
+	//Find the object in the vector and delete
+	std::cout << "[INFO]: " << "Closing Client thread" << std::endl;
+	delete ((Conn_Handler *) client_conn);
+}
 void* client_openning_helper(void* client_conn){
 	pthread_cleanup_push(client_closeing_helper, client_conn);
 
@@ -20,11 +24,6 @@ void* client_openning_helper(void* client_conn){
 	pthread_cleanup_pop(1);	
 }
 
-void client_closeing_helper(void* client_conn){
-	//Find the object in the vector and delete
-	std::cout << "[INFO]: " << "Closing Client thread" << std::endl;
-	delete ((Conn_Handler *) client_conn);
-}
 
 void TCP_Server::init_server()
 {
