@@ -1,7 +1,7 @@
 #include "tcp_server.h"
 #include<iostream>
 
-#define LISTENING_PORT 8088
+#define LISTENING_PORT 8080
 
 int main(int argc, char *argv[])
 {
