@@ -29,7 +29,7 @@ void Conn_Handler::run_handle()
             std::cout << std::endl;
 
             std::stringstream echo_msg;
-            echo_msg << std::string(data_buffer, data_buffer+recv_length) << "<ACK:>";
+            echo_msg << ECHO_BACK_MSG_PREFIX << std::string(data_buffer, data_buffer+recv_length) << ECHO_BACK_MSG_SUFFIX;
 
             //Echo back
             int send_length = 0;

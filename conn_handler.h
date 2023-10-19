@@ -16,6 +16,9 @@
 
 #define BUFSIZE 2048
 
+#define ECHO_BACK_MSG_PREFIX "Server Echo:["
+#define ECHO_BACK_MSG_SUFFIX "]"
+
 class Conn_Handler
 {
 public:
