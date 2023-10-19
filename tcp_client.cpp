@@ -59,6 +59,6 @@ void TCP_Client::run_job()
         }
 
 
-        std::this_thread::sleep_for(std::chrono::seconds(3)); //Sleep 3 seconds
+        std::this_thread::sleep_for(std::chrono::seconds(MSG_INTERVAL)); 
     }
 }

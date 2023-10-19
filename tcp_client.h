@@ -17,6 +17,8 @@
 
 #define BUFSIZE 2048
 
+#define MSG_INTERVAL 1 //The Client will send the message every 1 second
+
 
 class TCP_Client{
 public:
